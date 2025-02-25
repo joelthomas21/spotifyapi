@@ -11,18 +11,18 @@ sp = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
         scope="playlist-modify-private",
         redirect_uri="http://example.com",
-        client_id= "175eeb20f6cc4e38abd3afcbfd14cf6d",
-        client_secret= "d1c95f1bd211412a8e195f7039e4d3e7",
+        client_id= "INSERT CLIENT ID",
+        client_secret= "INSERT CLIENT SECRET",
         show_dialog=True,
         cache_path="token.txt",
-        username="joel_thomas21",
+        username="INSERT SPOTIFY USERNAME",
     )
 )
 user_id = sp.current_user()["id"]
 
 # Getting the song data
 
-all_songs_playlist = sp.playlist_tracks(playlist_id="4wmpN7aVqL9VWQK74wqBWA")
+all_songs_playlist = sp.playlist_tracks(playlist_id="INSERT A PLAYLIST OF ALL THE SONGS TO BE ANALYSED")
 
 
 #TODO: get the track ids from all_songs_playlist and pass those into sp.audio_features
@@ -124,34 +124,3 @@ sp.playlist_add_items(playlist_id=low_hi['id'], items=low_nrg_hi_dnce0)
 sp.playlist_add_items(playlist_id=hi_hi['id'], items=hi_nrg_hi_dnce1)
 sp.playlist_add_items(playlist_id=low_low['id'], items=low_nrg_low_dnce2)
 sp.playlist_add_items(playlist_id=hi_low['id'], items=hi_nrg_low_dnce3)
-
-
-
-
-
-
-
-
-
-#run_once = 0
-#for item in all_songs_playlist['items']:
- #   track_name = (item['track']['name'])
-  #  if run_once == 0:
-   #     for artist in item['track']['artists']:
-    #        artist_name = (artist['name'])
-            #print(artist_name)
-     #       run_once = run_once + 1
-
-   # print(f"{track_name} - {artist_name}")
-
-
-#playlist = sp.user_playlist_create(user=user_id, name=f"pppp", public=False)
-#2. add songs to a playlist
-#3. retrieve the songs in that playlist
-#for song in that playlist, get the energy
-#split into quartiles
-#for song in that playlist, if energy < quartile, put into low energy playlilst
-
-#maybe after that
-#for each energy playlist, create a new folder
-#for song in playlist, get track name, search directory for file and add song to that playlist
